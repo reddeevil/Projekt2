@@ -1,0 +1,48 @@
+﻿@model Projekt2.Models.Zawodnik
+
+@{
+    ViewBag.Title = "Szczegóły";
+}
+<h2>Details</h2>
+<div>
+    <h4>Zawodnik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Imię
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imie)
+        </dd>
+
+        <dt>
+            Nazwisko
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwisko)
+        </dd>
+
+        <dt>
+            Drużyna
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Druzyna.nazwa)
+        </dd>
+
+        <dt>
+            Pozycja
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pozycja.nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.id_zawodnik }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

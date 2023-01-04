@@ -1,0 +1,42 @@
+﻿@model Projekt2.Models.Ogloszenia
+
+@{
+    ViewBag.Title = "Szczegóły ogłoszenia";
+}
+
+<h2>Szczegóły ogłoszenia</h2>
+
+<div>
+    <h4>Ogloszenia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tytuł
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tytul)
+        </dd>
+
+        <dt>
+            Treść
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tresc)
+        </dd>
+
+        <dt>
+            Drużyna
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Druzyna.nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.id_ogloszenia }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

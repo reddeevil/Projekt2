@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Projekt2.Models.Trener>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Licencja.nazwa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Licencja.nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_trener }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_trener }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_trener })
+        </td>
+    </tr>
+}
+
+</table>
+
+<li>@Html.ActionLink("Licencje", "Index", "Licencjas")</li>
